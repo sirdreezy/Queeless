@@ -13,10 +13,8 @@ using System.IO;
 
 namespace Queeless
 {
-    public partial class FrmHome : Form
     public partial class frmLoginPage : Form
     {
-        public FrmHome()
         private LoginPage user;
         private bool showingRegister = false;
         private int slideSpeed = 20;
@@ -25,40 +23,9 @@ namespace Queeless
         {
             
             InitializeComponent();
-        }
-
-        
-        private void pictureBoxBurger_Click(object sender, EventArgs e)
-        {
-            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
-            path.AddEllipse(0, 0, pictureBoxBurger.Width, pictureBoxBurger.Height);
-            pictureBoxBurger.Region = new Region(path);
-        }
-        private void SelectDeliverToRoom() 
-        {
-            pnlDeliver.BackColor = Color.FromArgb(20, 50, 40);
-            pnlPreOrder.BackColor = Color.FromArgb(30, 35, 45);
-
-        }
-        private void SelectPreOrder() 
-        {
-            pnlPreOrder.BackColor = Color.FromArgb(20, 50, 40);
-            pnlDeliver.BackColor = Color.FromArgb(30, 35, 45);
-        }
-        private void lblDeliverToRoom_Click(object sender, EventArgs e)
-        {
-            SelectDeliverToRoom();
-        }
-
-        private void lblPreOrderAndCollect_Click(object sender, EventArgs e)
-        {
-            SelectPreOrder();
-        }
-    }
             pnlRegister.Parent = pnlMain;
             pnlRegister.Location = new Point(1020, 50);
             pnlRegister.BringToFront();
-            pnlForgotPassword.Visible = false;
         }
 
         
@@ -100,11 +67,13 @@ namespace Queeless
                     pnlRegister.Left = 1020;
                     slideTimer.Stop();
                 }
+                
             }
         }
 
         private void lblBack_Click(object sender, EventArgs e)
         {
+
 
         }
 
@@ -135,10 +104,6 @@ namespace Queeless
                     loginSuccessful = true;
                     break;
                 }
-                this.Hide();
-
-                // Opens your Home form (Form1)
-               
             }
 
             if (!loginSuccessful)
@@ -215,9 +180,14 @@ namespace Queeless
                 return;
             }
 
-            if (!user.IsValidStudentEmail() && !user.IsValidLecturerEmail())
+            if (!user.IsValidStudentEmail())
             {
-                lblRegisterEmailError.Text = "Please use a valid student or lecturer email.";
+                lblRegisterEmailError.Text = "Please use a valid student email.";
+                return;
+            }
+            else if (!user.IsValidLecturerEmail())
+            {
+                lblRegisterEmailError.Text = "Please use a valid lecturer email.";
                 return;
             }
 
@@ -236,118 +206,6 @@ namespace Queeless
         {
             showingRegister = false;
             slideTimer.Start();
-        }
-
-        private void lblForgotPassword_Click(object sender, EventArgs e)
-        {
-            pnlLogin.Visible = false;
-            
-            pnlRegister.Visible = false;
-     
-            pnlForgotPassword.Visible = true;
-            
-            pnlForgotPassword.BringToFront();
-        }
-
-        private void lblBacktoLogin_Click(object sender, EventArgs e)
-        {
-            pnlForgotPassword.Visible = false;
-            pnlLogin.Visible = true;
-            pnlLogin.BringToFront();
-        }
-
-        private void btnResetPassword_Click(object sender, EventArgs e)
-        {
-            string email = txtForgotEmail.Text.Trim();
-            string newPassword = txtNewPassword.Text;
-            string confirmPassword = txtConfirmPassword.Text;
-
-            
-            if (string.IsNullOrWhiteSpace(email))
-            {
-                lblForgotPasswordError.Text = "Please enter your email.";
-                return;
-            }
-
-            
-            if (string.IsNullOrWhiteSpace(newPassword))
-            {
-                lblForgotPasswordError.Text = "Please enter a new password.";
-                return;
-            }
-
-           
-            if (newPassword != confirmPassword)
-            {
-                lblForgotPasswordError.Text = "Passwords do not match.";
-                return;
-            }
-
-           
-            LoginPage user = new LoginPage("", email, "", newPassword);
-
-            if (!user.IsValidPassword())
-            {
-                lblForgotPasswordError.Text =
-                    "Password must be 13 characters, contain a number and a special character.";
-                return;
-            }
-
-            
-            if (!File.Exists("users.txt"))
-            {
-                lblForgotPasswordError.Text = "No accounts found.";
-                return;
-            }
-
-            string[] users = File.ReadAllLines("users.txt");
-
-            bool found = false;
-
-            for (int i = 0; i < users.Length; i++)
-            {
-                string[] details = users[i].Split('|');
-
-                if (details.Length >= 2 &&
-                    details[0].Trim().Equals(email, StringComparison.OrdinalIgnoreCase))
-                {
-                    // Update password
-                    users[i] = details[0] + "|" + newPassword;
-
-                    found = true;
-                    break;
-                }
-            }
-
-            if (!found)
-            {
-                lblForgotPasswordError.Text =
-                    "No account was found with that email.";
-                return;
-            }
-
-            // Save the updated information
-            File.WriteAllLines("users.txt", users);
-
-            lblForgotPasswordError.Text =
-                "Password reset successfully!";
-
-            // Clear fields
-            txtForgotEmail.Clear();
-            txtNewPassword.Clear();
-            txtConfirmPassword.Clear();
-        }
-
-        private void txtConfirmPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblLogin_Click(object sender, EventArgs e)
-        {
-            pnlRegister.Visible = false;
-            pnlLogin.Visible = true;
-            pnlLogin.BringToFront();
         }
     }
     
