@@ -100,7 +100,6 @@ namespace Queeless
                     pnlRegister.Left = 1020;
                     slideTimer.Stop();
                 }
-                
             }
         }
 
