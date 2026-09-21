@@ -66,25 +66,11 @@
             this.lblSlogan = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.slideTimer = new System.Windows.Forms.Timer(this.components);
-            this.pnlForgotPassword = new System.Windows.Forms.Panel();
-            this.lblForgot = new System.Windows.Forms.Label();
-            this.lblPasswordUpdate = new System.Windows.Forms.Label();
-            this.txtForgotEmail = new System.Windows.Forms.TextBox();
-            this.txtNewPassword = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnResetPassword = new System.Windows.Forms.Button();
-            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
-            this.lblBacktoLogin = new System.Windows.Forms.Label();
-            this.lblForgotPasswordError = new System.Windows.Forms.Label();
             this.pnlMain.SuspendLayout();
             this.pnlLogin.SuspendLayout();
             this.pnlRegister.SuspendLayout();
             this.pnlBrand.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            this.pnlForgotPassword.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -92,7 +78,6 @@
             this.pnlMain.BackColor = System.Drawing.Color.Transparent;
             this.pnlMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlMain.BackgroundImage")));
             this.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlMain.Controls.Add(this.pnlForgotPassword);
             this.pnlMain.Controls.Add(this.pnlLogin);
             this.pnlMain.Controls.Add(this.pnlBrand);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -191,7 +176,6 @@
             this.lblLogin.Size = new System.Drawing.Size(40, 16);
             this.lblLogin.TabIndex = 15;
             this.lblLogin.Text = "Login";
-            this.lblLogin.Click += new System.EventHandler(this.lblLogin_Click);
             // 
             // lblAlreadyHaveAnAccount
             // 
@@ -306,7 +290,7 @@
             this.lblBack.AutoSize = true;
             this.lblBack.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblBack.Location = new System.Drawing.Point(320, 31);
+            this.lblBack.Location = new System.Drawing.Point(315, 31);
             this.lblBack.Name = "lblBack";
             this.lblBack.Size = new System.Drawing.Size(135, 59);
             this.lblBack.TabIndex = 9;
@@ -371,7 +355,6 @@
             this.lblForgotPassword.Size = new System.Drawing.Size(116, 16);
             this.lblForgotPassword.TabIndex = 4;
             this.lblForgotPassword.Text = "Forgot Password?";
-            this.lblForgotPassword.Click += new System.EventHandler(this.lblForgotPassword_Click);
             // 
             // txtPassword
             // 
@@ -477,126 +460,6 @@
             this.slideTimer.Interval = 10;
             this.slideTimer.Tick += new System.EventHandler(this.slideTimer_Tick);
             // 
-            // pnlForgotPassword
-            // 
-            this.pnlForgotPassword.BackColor = System.Drawing.Color.White;
-            this.pnlForgotPassword.Controls.Add(this.lblForgotPasswordError);
-            this.pnlForgotPassword.Controls.Add(this.lblBacktoLogin);
-            this.pnlForgotPassword.Controls.Add(this.txtConfirmPassword);
-            this.pnlForgotPassword.Controls.Add(this.btnResetPassword);
-            this.pnlForgotPassword.Controls.Add(this.pictureBox2);
-            this.pnlForgotPassword.Controls.Add(this.pictureBox1);
-            this.pnlForgotPassword.Controls.Add(this.txtNewPassword);
-            this.pnlForgotPassword.Controls.Add(this.txtForgotEmail);
-            this.pnlForgotPassword.Controls.Add(this.lblPasswordUpdate);
-            this.pnlForgotPassword.Controls.Add(this.lblForgot);
-            this.pnlForgotPassword.Location = new System.Drawing.Point(523, 47);
-            this.pnlForgotPassword.Name = "pnlForgotPassword";
-            this.pnlForgotPassword.Size = new System.Drawing.Size(500, 550);
-            this.pnlForgotPassword.TabIndex = 5;
-            // 
-            // lblForgot
-            // 
-            this.lblForgot.AutoSize = true;
-            this.lblForgot.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblForgot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblForgot.Location = new System.Drawing.Point(49, 108);
-            this.lblForgot.Name = "lblForgot";
-            this.lblForgot.Size = new System.Drawing.Size(164, 60);
-            this.lblForgot.TabIndex = 0;
-            this.lblForgot.Text = "Forgot";
-            // 
-            // lblPasswordUpdate
-            // 
-            this.lblPasswordUpdate.AutoSize = true;
-            this.lblPasswordUpdate.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPasswordUpdate.ForeColor = System.Drawing.Color.Green;
-            this.lblPasswordUpdate.Location = new System.Drawing.Point(224, 108);
-            this.lblPasswordUpdate.Name = "lblPasswordUpdate";
-            this.lblPasswordUpdate.Size = new System.Drawing.Size(239, 60);
-            this.lblPasswordUpdate.TabIndex = 1;
-            this.lblPasswordUpdate.Text = "Password?";
-            // 
-            // txtForgotEmail
-            // 
-            this.txtForgotEmail.Location = new System.Drawing.Point(67, 212);
-            this.txtForgotEmail.Name = "txtForgotEmail";
-            this.txtForgotEmail.Size = new System.Drawing.Size(361, 22);
-            this.txtForgotEmail.TabIndex = 2;
-            this.txtForgotEmail.Text = "Email";
-            // 
-            // txtNewPassword
-            // 
-            this.txtNewPassword.Location = new System.Drawing.Point(67, 273);
-            this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Size = new System.Drawing.Size(361, 22);
-            this.txtNewPassword.TabIndex = 3;
-            this.txtNewPassword.Text = "New Password";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Queeless.Properties.Resources.Navy_and_Green_Queueless_Wordmark;
-            this.pictureBox1.Location = new System.Drawing.Point(28, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(153, 59);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Queeless.Properties.Resources.Navy_and_Green_Queueless_Wordmark;
-            this.pictureBox2.Location = new System.Drawing.Point(289, 458);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(178, 63);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnResetPassword
-            // 
-            this.btnResetPassword.BackColor = System.Drawing.Color.Green;
-            this.btnResetPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResetPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResetPassword.ForeColor = System.Drawing.Color.White;
-            this.btnResetPassword.Location = new System.Drawing.Point(67, 422);
-            this.btnResetPassword.Name = "btnResetPassword";
-            this.btnResetPassword.Size = new System.Drawing.Size(185, 54);
-            this.btnResetPassword.TabIndex = 6;
-            this.btnResetPassword.Text = "Reset Password";
-            this.btnResetPassword.UseVisualStyleBackColor = false;
-            this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
-            // 
-            // txtConfirmPassword
-            // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(67, 331);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(361, 22);
-            this.txtConfirmPassword.TabIndex = 7;
-            this.txtConfirmPassword.Text = "Confirm Password";
-            this.txtConfirmPassword.TextChanged += new System.EventHandler(this.txtConfirmPassword_TextChanged);
-            // 
-            // lblBacktoLogin
-            // 
-            this.lblBacktoLogin.AutoSize = true;
-            this.lblBacktoLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblBacktoLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblBacktoLogin.Location = new System.Drawing.Point(67, 388);
-            this.lblBacktoLogin.Name = "lblBacktoLogin";
-            this.lblBacktoLogin.Size = new System.Drawing.Size(88, 16);
-            this.lblBacktoLogin.TabIndex = 8;
-            this.lblBacktoLogin.Text = "Back to Login";
-            this.lblBacktoLogin.Click += new System.EventHandler(this.lblBacktoLogin_Click);
-            // 
-            // lblForgotPasswordError
-            // 
-            this.lblForgotPasswordError.AutoSize = true;
-            this.lblForgotPasswordError.ForeColor = System.Drawing.Color.Red;
-            this.lblForgotPasswordError.Location = new System.Drawing.Point(234, 370);
-            this.lblForgotPasswordError.Name = "lblForgotPasswordError";
-            this.lblForgotPasswordError.Size = new System.Drawing.Size(0, 16);
-            this.lblForgotPasswordError.TabIndex = 9;
-            // 
             // frmLoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -617,10 +480,6 @@
             this.pnlBrand.ResumeLayout(false);
             this.pnlBrand.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            this.pnlForgotPassword.ResumeLayout(false);
-            this.pnlForgotPassword.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -663,17 +522,6 @@
         private System.Windows.Forms.Label lblRegisterEmailError;
         private System.Windows.Forms.Label lblFirstNameError;
         private System.Windows.Forms.Label lblRegisterPasswordError;
-        private System.Windows.Forms.Panel pnlForgotPassword;
-        private System.Windows.Forms.Label lblForgot;
-        private System.Windows.Forms.TextBox txtNewPassword;
-        private System.Windows.Forms.TextBox txtForgotEmail;
-        private System.Windows.Forms.Label lblPasswordUpdate;
-        private System.Windows.Forms.Button btnResetPassword;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblBacktoLogin;
-        private System.Windows.Forms.TextBox txtConfirmPassword;
-        private System.Windows.Forms.Label lblForgotPasswordError;
     }
 }
 
